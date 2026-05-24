@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-titulo: "EB Garamond", sans-serif;
+    --font-subtitle: "Poppins", sans-serif;
+    ;
+
+    --cor-Azul-Medico: #2C7DA0;
+    /*Destaques, bordas, botões*/
+    --cor-Verde-Saude: #4CAF8F;
+    /*Ícones, hover, elementos de contato*/
+    --cor-Fundo-Principal: #F0F4F8;
+    /*Body*/
+    --cor-Cards: #FFFFFF;
+    /*Cards, seções, blocos de conteúdo*/
+    --cor-Leitura: #4A5568;
+    /*Textos, parágrafos, descrições*/
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-Fundo-Principal);
+}
+
+#info-header {
+    display: none;
+}
+
+#WZAP {
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    color: #25D366;
+    font-size: 40px;
+    filter: drop-shadow(0px 0px 1px white);
+}
+
+.cont {
+    display: grid;
+    grid-template-rows: repeat(3 auto);
+    grid-template-columns: 12px 1fr 12px;
+    margin: auto;
+}
+
+img {
+    width: 70%;
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.409));
+}
+
+#img {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section,
+article {
+    margin: 15px 0px;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    padding: 15px;
+}
+
+h1, h2, h3 {
+    color: var(--cor-Azul-Medico);
+}
+
+p {
+    padding: 10px;
+}
+
+ul {
+    list-style: inside;
+    list-style-type: none;
+    line-height: 1.6em;
+}
+
+.skill ul {
+    list-style-type: disc;
+}
+
+.cards {
+    background-color: var(--cor-Cards);
+    padding: 5px;
+    margin: 10px 0px;
+    border-left: 4px solid var(--cor-Azul-Medico);
+    border-radius: 10px;
+}
+
+header {
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+main {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+footer {
+    grid-area: 3 / 1 / 4 / 4;
+    background-color: var(--cor-Verde-Saude);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+}
+
+span {
+    display: block;
+}
+
+#email {
+    background-color: rgba(255, 255, 255, 0.556);
+    width: 90%;
+    align-self: flex-end;
+    padding: 7px;
+    border-radius: 12px 0px 0px 12px;
+}
+
+.periodo {
+    text-align: right;
+    padding: 0;
+    margin-top: 5px;
+}
+
+#icon-zap,
+#icon-lkdin {
+    font-size: 28px;
+}
+
+#icon-zap {
+    color: #0f6e32;
+}
+
+#icon-lkdin {
+    color: #0077B5;
+}
+
+#icon-zap,
+#icon-lkdin {
+    filter: drop-shadow(0px 0px 1px rgba(247, 247, 247, 0.595));
+    transition: 350ms;
+}
+
+#icon-zap:hover,
+#icon-lkdin:hover {
+    scale: 1.2;
+    filter: drop-shadow(0px 0px 2px rgba(247, 247, 247, 0.882));
+}
+
+#endereco {
+    padding: 5px;
+}
+
+
+@media screen and (min-width: 668px) {
+    body {
+        padding-top: 20px;
+    }
+    .cont {
+        max-width: 900px;
+    }
+
+    #WZAP {
+        display: none;
+        /* esconde botão flutuante no desktop */
+    }
+
+    header {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        /* 2 linhas com mesma altura */
+        grid-template-columns: 1fr 2fr;
+        /* imagem | conteúdo */
+        gap: 10px 20px;
+        align-items: center;
+    }
+
+    #img {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+
+    h1 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    #info-header {
+        list-style-type: none;
+        display: inline;
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    main {
+        display: grid;
+        grid-template: repeat(2, auto), repeat(2, auto);
+        gap: 5px 10px;
+    }
+
+    #sec1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    #sec2 {
+        height: 100%;
+        grid-area: 1 / 2 / 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #aside {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .skill {
+        display: inline;
+    }
+
+    .resumo {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.448);
+        background-color: var(--cor-Azul-Medico);
+        padding: 10px;
+        border-radius: 15px;
+        color: white;
+    }
+
+    .resumo > h2 {
+        color: white;
+    }
+
+    #email, #endereco {
+        display: none;
+    }
+}
