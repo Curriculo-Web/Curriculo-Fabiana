@@ -102,6 +102,10 @@ ul {
     list-style-type: disc;
 }
 
+.cursos ul li {
+    cursor: pointer;
+}
+
 .cards {
     background-color: var(--cor-Cards);
     padding: 5px;
@@ -176,6 +180,51 @@ span {
 
 #endereco {
     padding: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Efeito de blur no fundo (não na imagem) */
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.3);
+    /* opcional, só para escurecer um pouco */
+
+    z-index: 1000;
+}
+
+.modal.ativo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    /* se o certificado tiver bordas transparentes */
+    padding: 10px;
+    /* opcional */
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: rgb(222, 1, 1);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;  /* escondido no mobile */
 }
 
 
@@ -267,5 +316,14 @@ span {
     aside {
         border-top: 2px solid rgba(0, 0, 0, 0.182) !important;
         border-radius: 12px 12px 0px 0px !important;
+    }
+
+    .fechar-modal {
+        display: block;
+    }
+    
+    .fechar-modal:hover {
+        color: #ccc;
+        text-decoration: none;
     }
 }
