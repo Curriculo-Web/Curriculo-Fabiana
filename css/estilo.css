@@ -65,7 +65,7 @@ img {
 
 #img {
     padding: 5px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
